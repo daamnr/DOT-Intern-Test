@@ -5,7 +5,7 @@ function Navbar() {
   const { auth, logoutUser } = useQuestionStore();
 
   return (
-    <nav className="w-full bg-transparent text-neutral-900 px-5 md:px-10 flex items-center justify-between py-5 text-sm border-b-slate-200 border bg-[#1E2739]">
+    <nav className="w-full bg-transparent text-neutral-900 px-5 md:px-10 flex items-center justify-between py-5 text-sm border-b-slate-200 border bg-[rgb(30,39,57)]">
       <a href="/" className="text-white font-medium text-lg hover:text-primary">
         <div className="w-20">
           {auth?.email ? (

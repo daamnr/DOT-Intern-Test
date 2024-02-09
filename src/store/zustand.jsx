@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import axios from "axios";
 import { persist } from "zustand/middleware";
 
 const useQuestionStore = create(
@@ -14,9 +15,10 @@ const useQuestionStore = create(
       page: 1,
       fetchQuestion: async (query) => {
         try {
-          const response = await fetch(`https://opentdb.com/api.php${query}`);
-
-          const data = await response.json();
+          const response = await axios.get(
+            `https://opentdb.com/api.php${query}`
+          );
+          const data = response.data;
 
           return set((state) => ({ ...state, question: data.results }));
         } catch (error) {
