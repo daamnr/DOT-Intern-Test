@@ -5,8 +5,8 @@ function Navbar() {
   const { auth, logoutUser } = useQuestionStore();
 
   return (
-    <nav className="w-full bg-transparent text-neutral-900 px-5 md:px-10 flex items-center justify-between py-5 text-sm border-b-slate-200 border bg-[rgb(30,39,57)]">
-      <a href="/" className="text-white font-medium text-lg hover:text-primary">
+    <nav className="w-full bg-transparent text-neutral-900 px-5 md:px-10 flex items-center justify-between py-5 text-sm border-b-slate-200 border">
+      <a href="/" className="text-black font-medium text-lg">
         <div className="w-20">
           {auth?.email ? (
             <h3 className="flex">
@@ -57,7 +57,7 @@ function Navbar() {
       <div className="space-x-5">
         {!auth?.email && (
           <Link
-            className="py-2 px-5 text-neutral-50 font-semibold border rounded-full border-neutral-50 hover:text-[#1E2739] hover:bg-neutral-50 "
+            className="py-2 px-5 text-neutral-50 font-semibold border rounded-full border-neutral-50 hover:text-white hover:bg-[#1e2739] bg-primary duration-300 ease-in-out"
             to={"/login"}
           >
             Login
@@ -65,14 +65,14 @@ function Navbar() {
         )}
         {auth?.email ? (
           <button
-            className="py-2 transition px-5 text-neutral-50 font-semibold rounded-full bg-primary"
+            className="py-2 transition px-5 text-neutral-50 font-semibold rounded-full bg-primary hover:text-white hover:bg-[#1e2739] duration-300 ease-in-out"
             onClick={logoutUser}
           >
             Logout
           </button>
         ) : (
           <Link
-            className="py-2 transition px-5 text-neutral-50 font-semibold rounded-full bg-primary"
+            className="py-2 transition px-5 text-neutral-50 font-semibold rounded-full bg-primary hover:text-white hover:bg-[#1e2739] duration-300 ease-in-out"
             to={"/register"}
           >
             Register

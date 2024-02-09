@@ -47,7 +47,7 @@ function LoginForm({ loading }) {
             !loading
               ? "bg-primary hover:bg-neutral-50 hover:text-primary"
               : "bg-primary/70 cursor-not-allowed"
-          }  p-1 justify-center font-semibold md:font-semibold text-base md:text-md text-center mb-3 transition text-white`}
+          }  p-1 justify-center font-semibold md:font-semibold text-base md:text-md text-center mb-3 transition text-white duration-300 ease-in-out`}
           type="submit"
         >
           {loading ? (
